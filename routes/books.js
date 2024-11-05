@@ -1,7 +1,11 @@
-DB_USER=your_db_user
-DB_HOST=localhost
-DB_NAME=your_db_name
-DB_PASSWORD=your_password
-DB_PORT=5432
-JWT_SECRET=your_secret_key
-PORT=5000
+const express = require('express');
+const router = express.Router();
+const bookController = require('../controllers/bookController');
+const authenticateToken = require('../middleware/authenticateToken');
+
+router.post('/', authenticateToken, bookController.createBook);
+router.get('/', authenticateToken, bookController.getBooks);
+router.put('/:id', authenticateToken, bookController.updateBook);
+router.delete('/:id', authenticateToken, bookController.deleteBook);
+
+module.exports = router;

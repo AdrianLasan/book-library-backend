@@ -1,0 +1,97 @@
+/* style.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #333; /* Fallback color in case image fails to load */
+  color: #333;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('img3.avif'); /* Set the background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.65; /* Adjust this value to lower the image opacity */
+  z-index: -1; /* Places the background image behind other content */
+}
+
+nav {
+  width: 100%;
+  position: fixed;                   /* Keep navbar fixed at the top */
+  top: 0;
+  left: 0;
+  background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #ff6347;
+}
+
+.container {
+  max-width: 800px;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Adds readability against background */
+  border-radius: 8px;                         /* Rounded corners for the container */
+  margin-top: 60px;                           /* Offset for fixed navbar height */
+}
+
+.container2 {
+  max-width: 800px;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Adds readability against background */
+  border-radius: 8px;                         /* Rounded corners for the container */
+  margin-top: 60px;                           /* Offset for fixed navbar height */
+}
+
+
+footer {
+  width: 100%;
+  padding: 15px 0;
+  background-color: rgba(51, 51, 51, 0.8); /* Similar background as the navbar */
+  color: white;
+  text-align: center;
+  position: fixed; /* Fixes the footer at the bottom */
+  bottom: 0;
+  left: 0;
+}
+
+
+
